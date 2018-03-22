@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 
     public float moveForce = 365f;
     public float maxSpeed = 5f;
-    public float jumpForce = 700;
+    public float jumpForce = 800;
 
     public Transform groundCheck;
     float groundRadius = 0.2f;
@@ -27,12 +27,24 @@ public class Player : MonoBehaviour {
 		startingPosition = transform.position;
 	}
 
+   /* void OnTriggerEnter2D (Collider2D other){
+        if (other.gameObject.tag == "MainCamera"){
+            cameras.CameraSwamp(other);
+        }
+    }*/
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            rb.AddForce(new Vector2(0f, jumpForce));
-            jump = true;
+        if (Input.GetKeyDown(KeyCode.Space) /*&& grounded*/)
+        {   
+            if (grounded){
+                rb.AddForce(new Vector2(0f, jumpForce));
+                jump = true;
+            }
+            else {
+                rb.AddForce(new Vector2(0f, 600));
+                jump = true;
+            }
         }
     }
 
@@ -40,21 +52,38 @@ public class Player : MonoBehaviour {
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 
-        if (!grounded) return;
+        if (!grounded) {
 
+            float h = Input.GetAxis("Horizontal");
 
-        float h = Input.GetAxis("Horizontal");
+            if(h * rb.velocity.x < maxSpeed)
+                rb.AddForce(Vector2.right * h * 100f);
+            
+            if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
 
-        if(h * rb.velocity.x < maxSpeed)
-            rb.AddForce(Vector2.right * h * moveForce);
-        
-        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
-            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+            if (h > 0 && !facingRight)
+                Flip();
+            else if (h < 0 && facingRight)
+                Flip();
 
-        if (h > 0 && !facingRight)
-            Flip();
-        else if (h < 0 && facingRight)
-            Flip();
+        }
+
+        else{
+
+            float h = Input.GetAxis("Horizontal");
+
+            if(h * rb.velocity.x < maxSpeed)
+                rb.AddForce(Vector2.right * h * moveForce);
+            
+            if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+
+            if (h > 0 && !facingRight)
+                Flip();
+            else if (h < 0 && facingRight)
+                Flip();
+        }
     }
 
     void Flip()
