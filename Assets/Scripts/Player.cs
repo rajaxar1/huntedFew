@@ -23,6 +23,15 @@ public class Player : MonoBehaviour {
 	int coins = 0;
 	Vector3 startingPosition;
 
+    bool hasRocketLauncher = false;
+    bool hasMachineGun = false;
+    bool hasPistol = false;
+    int ammoClips = 1;
+    int rockets = 10;
+
+    private bool inTrigger = false;
+    private Transform gun;
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
@@ -31,8 +40,45 @@ public class Player : MonoBehaviour {
 		startingPosition = transform.position;
 	}
 
-	void Update()
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        inTrigger = true;
+        gun = collision.transform;
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        inTrigger = false;
+    }
+
+    void Update()
 	{
+        if(inTrigger){
+            switch (gun.tag)
+            {
+                case "AssaultRifle":
+                    hasMachineGun = true; // enable switching to the machine gun
+                    Destroy(gun.gameObject); // destroy the picked object
+                    break;
+                case "RocketLauncher":
+                    hasRocketLauncher = true; // enable switching to the rocket launcher
+                    Destroy(gun.gameObject); // destroy the object
+                    break;
+                case "Pistol":
+                    hasPistol = true;
+                    Destroy(gun.gameObject);
+                    break;
+                case "AmmoClip":
+                    ammoClips++; // increment ammo clips
+                    Destroy(gun.gameObject);
+                    break;
+                case "Rocket":
+                    rockets++; // increment rockets
+                    Destroy(gun.gameObject);
+                    break;
+            }
+        }
+
 		if (Input.GetKeyDown(KeyCode.Space) && grounded)
 		{
 			rb.AddForce(new Vector2(0f, jumpForce));
@@ -46,7 +92,7 @@ public class Player : MonoBehaviour {
 		{
 			AnimTrigger("kick");
 		}
-		if (Input.GetKeyDown(KeyCode.Alpha1))
+		if (Input.GetKeyDown(KeyCode.Alpha1) && hasPistol)
 		{
 			anim.SetBool("pistol", true);
 			anim.SetBool("ar", false);
@@ -54,7 +100,7 @@ public class Player : MonoBehaviour {
 			anim.SetBool("rocket", false);
 
 		}
-		else if (Input.GetKeyDown(KeyCode.Alpha2))
+		else if (Input.GetKeyDown(KeyCode.Alpha2) && hasMachineGun)
 		{
 			anim.SetBool("pistol", false);
 			anim.SetBool("ar", true);
@@ -68,7 +114,7 @@ public class Player : MonoBehaviour {
 			anim.SetBool("melee", true);
 			anim.SetBool("rocket", false);
 		}
-		else if (Input.GetKeyDown(KeyCode.Alpha4))
+		else if (Input.GetKeyDown(KeyCode.Alpha4) && hasRocketLauncher)
 		{
 			anim.SetBool("pistol", false);
 			anim.SetBool("ar", false);
@@ -88,9 +134,6 @@ public class Player : MonoBehaviour {
 	void FixedUpdate()
 	{
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-
-		if (!grounded) return;
-
 
 		float move = Input.GetAxis("Horizontal");
 
