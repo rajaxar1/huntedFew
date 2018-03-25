@@ -5,6 +5,91 @@ licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: AlienSprite_0
+    21300002: AlienSprite_1
+    21300004: AlienSprite_2
+    21300006: AlienSprite_3
+    21300008: AlienSprite_4
+    21300010: AlienSprite_5
+    21300012: AlienSprite_6
+    21300014: AlienSprite_7
+    21300016: AlienSprite_8
+    21300018: AlienSprite_9
+    21300020: AlienSprite_10
+    21300022: AlienSprite_11
+    21300024: AlienSprite_12
+    21300026: AlienSprite_13
+    21300028: AlienSprite_14
+    21300030: AlienSprite_15
+    21300032: AlienSprite_16
+    21300034: AlienSprite_17
+    21300036: AlienSprite_18
+    21300038: AlienSprite_19
+    21300040: AlienSprite_20
+    21300042: AlienSprite_21
+    21300044: AlienSprite_22
+    21300046: AlienSprite_23
+    21300048: AlienSprite_24
+    21300050: AlienSprite_25
+    21300052: AlienSprite_26
+    21300054: AlienSprite_27
+    21300056: AlienSprite_28
+    21300058: AlienSprite_29
+    21300060: AlienSprite_30
+    21300062: AlienSprite_31
+    21300064: AlienSprite_32
+    21300066: AlienSprite_33
+    21300068: AlienSprite_34
+    21300070: AlienSprite_35
+    21300072: AlienSprite_36
+    21300074: AlienSprite_37
+    21300076: AlienSprite_38
+    21300078: AlienSprite_39
+    21300080: AlienSprite_40
+    21300082: AlienSprite_41
+    21300084: AlienSprite_42
+    21300086: AlienSprite_43
+    21300088: AlienSprite_44
+    21300090: AlienSprite_45
+    21300092: AlienSprite_46
+    21300094: AlienSprite_47
+    21300096: AlienSprite_48
+    21300098: AlienSprite_49
+    21300100: AlienSprite_50
+    21300102: AlienSprite_51
+    21300104: AlienSprite_52
+    21300106: AlienSprite_53
+    21300108: AlienSprite_54
+    21300110: AlienSprite_55
+    21300112: AlienSprite_56
+    21300114: AlienSprite_57
+    21300116: AlienSprite_58
+    21300118: AlienSprite_59
+    21300120: AlienSprite_60
+    21300122: AlienSprite_61
+    21300124: AlienSprite_62
+    21300126: AlienSprite_63
+    21300128: AlienSprite_64
+    21300130: AlienSprite_65
+    21300132: AlienSprite_66
+    21300134: AlienSprite_67
+    21300136: AlienSprite_68
+    21300138: AlienSprite_69
+    21300140: AlienSprite_70
+    21300142: AlienSprite_71
+    21300144: AlienSprite_72
+    21300146: AlienSprite_73
+    21300148: AlienSprite_74
+    21300150: AlienSprite_75
+    21300152: AlienSprite_76
+    21300154: AlienSprite_77
+    21300156: AlienSprite_78
+    21300158: AlienSprite_79
+    21300160: AlienSprite_80
+    21300162: AlienSprite_81
+    21300164: AlienSprite_82
+    21300166: AlienSprite_83
+    21300168: AlienSprite_84
+    21300170: AlienSprite_85
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -84,10 +169,1200 @@ TextureImporter:
       name: AlienSprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 31
+        y: 918
+        width: 31
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 918
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_2
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 918
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 918
+        width: 31
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 917
+        width: 28
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_5
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 918
+        width: 4
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_6
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 918
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_7
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 795
+        width: 69
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_8
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 444
+        width: 774
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_9
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 796
+        width: 95
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_10
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 795
+        width: 90
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_11
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 795
+        width: 85
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_12
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 795
+        width: 80
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_13
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 795
+        width: 76
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_14
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 792
+        width: 79
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_15
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 795
+        width: 98
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_16
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 795
+        width: 93
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_17
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 796
+        width: 89
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_18
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 690
+        width: 105
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_19
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 690
+        width: 100
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_20
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 690
+        width: 91
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_21
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 688
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_22
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 691
+        width: 87
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_23
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 690
+        width: 91
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_24
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 691
+        width: 95
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_25
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 579
+        width: 29
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_26
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 578
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_27
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 579
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_28
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 467
+        width: 89
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_29
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 468
+        width: 85
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_30
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 467
+        width: 87
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_31
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 467
+        width: 91
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_32
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 468
+        width: 101
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_33
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 467
+        width: 116
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_34
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 467
+        width: 140
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_35
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 467
+        width: 145
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_36
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 365
+        width: 148
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_37
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 365
+        width: 141
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_38
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 364
+        width: 140
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_39
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 364
+        width: 125
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_40
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 364
+        width: 113
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_41
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 364
+        width: 106
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_42
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 364
+        width: 99
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_43
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 364
+        width: 93
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_44
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 364
+        width: 89
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_45
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 351
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_46
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 350
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_47
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 351
+        width: 30
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_48
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 350
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_49
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 351
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_50
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 351
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_51
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 350
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_52
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 351
+        width: 4
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_53
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 351
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_54
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 351
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_55
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 270
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_56
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 270
+        width: 4
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_57
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 270
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_58
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 171
+        width: 91
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_59
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 170
+        width: 75
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_60
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 172
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_61
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 170
+        width: 73
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_62
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 173
+        width: 75
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_63
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 172
+        width: 78
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_64
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 170
+        width: 80
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_65
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 164
+        width: 88
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_66
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 159
+        width: 92
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_67
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 153
+        width: 92
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_68
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 26
+        width: 91
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_69
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 26
+        width: 92
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_70
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 26
+        width: 86
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_71
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 26
+        width: 81
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_72
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 26
+        width: 76
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_73
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 27
+        width: 110
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_74
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 24
+        width: 136
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_75
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 91
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_76
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 41
+        width: 118
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_77
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 26
+        width: 151
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_78
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 26
+        width: 150
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_79
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 24
+        width: 153
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_80
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 26
+        width: 148
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_81
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 26
+        width: 150
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_82
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 26
+        width: 151
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_83
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 15
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_84
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 15
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AlienSprite_85
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 15
+        width: 23
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
