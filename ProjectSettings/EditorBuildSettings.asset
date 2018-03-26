@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 180f3b99f1a6c9b45abc82610e585548
+  - enabled: 1
+    path: Assets/Scenes/Raj.unity
+    guid: b079724b748ed4f45b99926207a66588
