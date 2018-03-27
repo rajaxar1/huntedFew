@@ -23,11 +23,13 @@ public class Player : MonoBehaviour {
 	int coins = 0;
 	Vector3 startingPosition;
 
+	bool onLadder = false;
     bool hasRocketLauncher = false;
     bool hasMachineGun = false;
     bool hasPistol = false;
     int ammoClips = 1;
     int rockets = 10;
+    float default_grav = 0;
 
     private bool inTrigger = false;
     private Transform gun;
@@ -42,14 +44,18 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+    	if (collision.gameObject.tag == "ladder") {onLadder = true; default_grav = rb.gravityScale; rb.gravityScale = 0;} 
         inTrigger = true;
         gun = collision.transform;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
+    	if (collision.gameObject.tag == "ladder") {onLadder = false; rb.gravityScale = default_grav;}
         inTrigger = false;
     }
+
+
 
     void Update()
 	{
@@ -120,6 +126,14 @@ public class Player : MonoBehaviour {
 			anim.SetBool("ar", false);
 			anim.SetBool("melee", false);
 			anim.SetBool("rocket", true);
+		}
+		else if (onLadder){
+			if (Input.GetAxis("Vertical") > 0){
+				transform.Translate(0,1 * Time.deltaTime,0);
+			}
+			if (Input.GetAxis("Vertical") < 0){
+				transform.Translate(0,-1 * Time.deltaTime,0);
+			}
 		}
 	}
 

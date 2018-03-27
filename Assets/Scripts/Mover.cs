@@ -161,6 +161,10 @@ public class Mover : MonoBehaviour
 	 */
 	private void NextWaypoint()
 	{
+
+
+		
+		
 		if(isCircular) {
 			
 			if(!inReverse) {
