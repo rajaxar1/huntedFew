@@ -44,6 +44,20 @@ public class Weapon : MonoBehaviour {
 
     private void Shoot()
     {
-        throw new NotImplementedException();
+        Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
+            Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        Vector2 firePointPostion = new Vector2(firePoint.position.x, firePoint.position.y);
+        effect();
+        RaycastHit2D hit = Physics2D.Raycast(firePointPostion, mousePosition - firePointPostion, 100, ~notToHit);
+
+        if(hit.collider != null)
+        {
+
+        }
+    }
+
+    private void effect()
+    {
+        Instantiate()
     }
 }
