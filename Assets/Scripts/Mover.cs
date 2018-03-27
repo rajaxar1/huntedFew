@@ -24,6 +24,8 @@ public class Mover : MonoBehaviour
     public float maxSpeed = 5f;
     public float jumpForce = 700;
 
+	public float distance1 = 0;
+
     public Transform groundCheck;
     float groundRadius = 0.2f;
     public LayerMask whatIsGround;
@@ -85,9 +87,9 @@ public class Mover : MonoBehaviour
 		// Get the target waypoints position
 		Vector3 targetPosition = currentWaypoint.transform.position;
 
-		
+		distance1 = Vector3.Distance(currentPosition, targetPosition);
 		// If the moving object isn't that close to the waypoint
-		if(Vector3.Distance(currentPosition, targetPosition) > .3f) {
+		if(Vector3.Distance(currentPosition, targetPosition) > 3f) {
 
 			// Get the direction and normalize
 			Vector3 directionOfTravel = targetPosition - currentPosition;
@@ -159,6 +161,10 @@ public class Mover : MonoBehaviour
 	 */
 	private void NextWaypoint()
 	{
+
+
+		
+		
 		if(isCircular) {
 			
 			if(!inReverse) {
