@@ -58,6 +58,6 @@ public class Weapon : MonoBehaviour {
 
     private void effect()
     {
-        Instantiate()
+        //Instantiate();
     }
 }
