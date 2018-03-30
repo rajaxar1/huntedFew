@@ -6,7 +6,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     public float fireRate = 0.0f;
-    public float damage = 10.0f;
+    public int damage = 10;
     public LayerMask whatToHit;
     public Transform BulletTrailPrefab;
     public Transform MuzzleFlashPrefab;
@@ -62,6 +62,12 @@ public class Weapon : MonoBehaviour {
         if(hit.collider != null)
         {
             Debug.DrawLine(firePointPostion, hit.point, Color.red);
+            BossEnemy bossEnemy = hit.collider.GetComponent<BossEnemy>();
+            if (bossEnemy != null)
+            {
+                Debug.Log(bossEnemy.bossStats.health);
+                bossEnemy.DamageBoss(damage);
+            }
         }
     }
 
