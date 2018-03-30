@@ -168,8 +168,9 @@ public class Player : MonoBehaviour {
 	void Flip()
 	{
 		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		//Vector3 theScale = transform.localScale;
+		//theScale.x *= -1;
+        transform.Rotate(new Vector3(0f, 180f, 0f));
+		//transform.localScale = theScale;
 	}
 }
