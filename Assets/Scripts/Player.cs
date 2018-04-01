@@ -35,6 +35,7 @@ public class Player : MonoBehaviour {
     private Transform gun;
 
     public PlayerStats playerStats = new PlayerStats();
+    public WeaponSwitching weaponSwitching;
 
     // Use this for initialization
     void Start() {
@@ -67,14 +68,17 @@ public class Player : MonoBehaviour {
                 case "AssaultRifle":
                     hasMachineGun = true; // enable switching to the machine gun
                     Destroy(gun.gameObject); // destroy the picked object
+                    weaponSwitching.AddItem("ar");
                     break;
                 case "RocketLauncher":
                     hasRocketLauncher = true; // enable switching to the rocket launcher
                     Destroy(gun.gameObject); // destroy the object
+                    weaponSwitching.AddItem("rocket");
                     break;
                 case "Pistol":
                     hasPistol = true;
                     Destroy(gun.gameObject);
+                    weaponSwitching.AddItem("pistol");
                     break;
                 case "AmmoClip":
                     ammoClips++; // increment ammo clips
