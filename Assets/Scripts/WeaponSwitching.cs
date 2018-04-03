@@ -69,7 +69,11 @@ public class WeaponSwitching : MonoBehaviour {
         int i = 0;
         foreach(Transform weapon in transform)
         {
-            if (i == selectedWeapon) weapon.gameObject.SetActive(true);
+            if (i == selectedWeapon)
+            {
+                Player.setActiveGun(weapon.name);
+                weapon.gameObject.SetActive(true);
+            }
             else weapon.gameObject.SetActive(false);
             i++;
 

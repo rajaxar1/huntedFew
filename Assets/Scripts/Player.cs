@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
     [HideInInspector] public bool facingRight = true;
     [HideInInspector] public bool jump = true;
 
-    public float moveForce = 365f;
+    public float speed = 10f;
     public float maxSpeed = 5f;
     public float jumpForce = 700;
 
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
     float groundRadius = 0.2f;
     public LayerMask whatIsGround;
 
-    Animator anim;
+    static Animator anim;
 
     bool grounded = false;
     private Rigidbody2D rb;
@@ -104,35 +104,7 @@ public class Player : MonoBehaviour {
         {
             AnimTrigger("kick");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1) && hasPistol)
-        {
-            anim.SetBool("pistol", true);
-            anim.SetBool("ar", false);
-            anim.SetBool("melee", false);
-            anim.SetBool("rocket", false);
 
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && hasMachineGun)
-        {
-            anim.SetBool("pistol", false);
-            anim.SetBool("ar", true);
-            anim.SetBool("melee", false);
-            anim.SetBool("rocket", false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            anim.SetBool("pistol", false);
-            anim.SetBool("ar", false);
-            anim.SetBool("melee", true);
-            anim.SetBool("rocket", false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && hasRocketLauncher)
-        {
-            anim.SetBool("pistol", false);
-            anim.SetBool("ar", false);
-            anim.SetBool("melee", false);
-            anim.SetBool("rocket", true);
-        }
         else if (onLadder) {
             if (Input.GetAxis("Vertical") > 0) {
                 transform.Translate(0, 1 * Time.deltaTime, 0);
@@ -141,6 +113,46 @@ public class Player : MonoBehaviour {
                 transform.Translate(0, -1 * Time.deltaTime, 0);
             }
         }
+    }
+
+    public static void setActiveGun(string gun)
+    {
+        switch (gun)
+        {
+            case "ArPrefab(Clone)":
+                setArActive();
+                break;
+            case "PistolPrefab(Clone)":
+                setPistolActive();
+                break;
+            case "RocketPrefab(Clone)":
+                setRocketActive();
+                break;
+        }
+    }
+
+    private static void setArActive()
+    {
+        anim.SetBool("pistol", false);
+        anim.SetBool("ar", true);
+        anim.SetBool("melee", false);
+        anim.SetBool("rocket", false);
+    }
+
+    private static void setPistolActive()
+    {
+        anim.SetBool("pistol", true);
+        anim.SetBool("ar", false);
+        anim.SetBool("melee", false);
+        anim.SetBool("rocket", false);
+    }
+
+    private static void setRocketActive()
+    {
+        anim.SetBool("pistol", false);
+        anim.SetBool("ar", false);
+        anim.SetBool("melee", false);
+        anim.SetBool("rocket", true);
     }
 
     void AnimTrigger(string triggerName)
@@ -155,19 +167,26 @@ public class Player : MonoBehaviour {
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 
-        float move = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
 
-        if (move * rb.velocity.x < maxSpeed)
-            rb.AddForce(Vector2.right * move * moveForce);
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized;
 
-        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+        rb.velocity = new Vector2(rb.velocity.x + (movement.x * speed), rb.velocity.y); 
+
+        if(Mathf.Abs(rb.velocity.x) > maxSpeed)
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+
+        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+             rb.velocity = new Vector2(0, rb.velocity.y);
+
+        Debug.Log(rb.velocity.x);
 
         anim.SetFloat("speed", Mathf.Abs(rb.velocity.x));
 
-        if (move > 0 && !facingRight)
+        if (moveHorizontal > 0 && !facingRight)
             Flip();
-        else if (move < 0 && facingRight)
+        else if (moveHorizontal < 0 && facingRight)
             Flip();
     }
 

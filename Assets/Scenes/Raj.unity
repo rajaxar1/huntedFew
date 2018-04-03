@@ -5800,8 +5800,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingRight: 1
   jump: 1
-  moveForce: 365
-  maxSpeed: 5
+  speed: 1
+  maxSpeed: 20
   jumpForce: 800
   groundCheck: {fileID: 397829793}
   whatIsGround:
