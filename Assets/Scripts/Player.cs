@@ -34,7 +34,6 @@ public class Player : MonoBehaviour {
     private bool inTrigger = false;
     private Transform gun;
 
-    public PlayerStats playerStats = new PlayerStats();
     public WeaponSwitching weaponSwitching;
 
     // Use this for initialization
@@ -180,8 +179,6 @@ public class Player : MonoBehaviour {
         if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
              rb.velocity = new Vector2(0, rb.velocity.y);
 
-        Debug.Log(rb.velocity.x);
-
         anim.SetFloat("speed", Mathf.Abs(rb.velocity.x));
 
         if (moveHorizontal > 0 && !facingRight)
@@ -199,17 +196,4 @@ public class Player : MonoBehaviour {
         //transform.localScale = theScale;
     }
 
-    public void DamagePlayer(int damage)
-    {
-        playerStats.health -= damage;
-        if(playerStats.health <= 0f)
-        {
-            GameMaster.KillPlayer(this);
-        }
-    }
-
-    public class PlayerStats{
-        public float health = 100f;
-
-    }
 }
