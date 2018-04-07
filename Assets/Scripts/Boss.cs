@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossEnemy : MonoBehaviour {
+public class Boss : MonoBehaviour {
 
     public BossStats bossStats = new BossStats();
 
@@ -24,7 +24,6 @@ public class BossEnemy : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.tag);
         // If the entering collider is the player...
         if (other.gameObject.tag == "Player")
         {

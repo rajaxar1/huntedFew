@@ -6,6 +6,7 @@ public class WeaponSwitching : MonoBehaviour {
     public Transform ArPrefab;
     public Transform PistolPrefab;
     public Transform RocketPrefab;
+    public GunUI gunUI;
 
     // Use this for initialization
     void Start () {
@@ -72,6 +73,7 @@ public class WeaponSwitching : MonoBehaviour {
             if (i == selectedWeapon)
             {
                 Player.setActiveGun(weapon.name);
+                gunUI.SelectWeapon(weapon.name);
                 weapon.gameObject.SetActive(true);
             }
             else weapon.gameObject.SetActive(false);

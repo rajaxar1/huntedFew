@@ -12,12 +12,14 @@ public class PlayerHealth : MonoBehaviour
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     
                                         
     bool isDead;                                                
-    bool damaged;                                              
+    bool damaged;
 
+    Player player;
 
     void Awake()
     {
-    
+        player = GetComponent<Player>();
+
         // Set the initial health of the player.
         currentHealth = startingHealth;
     }
@@ -67,5 +69,6 @@ public class PlayerHealth : MonoBehaviour
     {
         // Set the death flag so this function won't be called again.
         isDead = true;
+        player.enabled = false;
     }
 }
