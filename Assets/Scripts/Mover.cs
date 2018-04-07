@@ -103,6 +103,9 @@ public class Mover : MonoBehaviour
 			if(targetPosition.y - currentPosition.y < 1 && jump == true){
 				 jump = false;
 			}
+
+			//rotation based on next waypoint
+			rb.MoveRotation(rb.rotation + speed * Time.fixedDeltaTime);
 			
 			/*//mover.cs old code 
 			//scale the movement on each axis by the directionOfTravel vector components
