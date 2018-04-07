@@ -62,7 +62,7 @@ public class Weapon : MonoBehaviour {
         if(hit.collider != null)
         {
             Debug.DrawLine(firePointPostion, hit.point, Color.red);
-            BossEnemy bossEnemy = hit.collider.GetComponent<BossEnemy>();
+            Boss bossEnemy = hit.collider.GetComponent<Boss>();
             if (bossEnemy != null)
             {
                 Debug.Log(bossEnemy.bossStats.health);
