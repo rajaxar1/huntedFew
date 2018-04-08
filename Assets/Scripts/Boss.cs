@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour {
     GameObject player;
 
     PlayerHealth playerHealth;
-
+    Animator anim;
     bool playerInRange;
     float timer;
 
@@ -18,6 +18,7 @@ public class Boss : MonoBehaviour {
 
     void Awake()
     {
+        anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
     }
@@ -27,7 +28,6 @@ public class Boss : MonoBehaviour {
         // If the entering collider is the player...
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("hitting player");
             // ... the player is in range.
             playerInRange = true;
         }
@@ -45,6 +45,7 @@ public class Boss : MonoBehaviour {
 
     void Update()
     {
+        anim.ResetTrigger("Attack");
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
 
@@ -59,12 +60,22 @@ public class Boss : MonoBehaviour {
 
     void Attack()
     {
+        AnimTrigger("Attack");
         timer = 0f;
 
         if (playerHealth.currentHealth > 0)
         {
             playerHealth.TakeDamage(attackDamage);
         }
+        //anim.ResetTrigger("Attack");
+    }
+
+    void AnimTrigger(string triggerName)
+    {
+        foreach (AnimatorControllerParameter p in anim.parameters)
+            if (p.type == AnimatorControllerParameterType.Trigger)
+                anim.ResetTrigger(p.name);
+        anim.SetTrigger(triggerName);
     }
 
     public void DamageBoss(int damage)
@@ -72,6 +83,7 @@ public class Boss : MonoBehaviour {
         bossStats.health -= damage;
         if (bossStats.health <= 0f)
         {
+            anim.SetBool("Death", true);
             GameMaster.KillBoss(this);
         }
     }
