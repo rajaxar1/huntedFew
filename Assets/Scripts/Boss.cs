@@ -45,7 +45,6 @@ public class Boss : MonoBehaviour {
 
     void Update()
     {
-        anim.ResetTrigger("Attack");
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
 
