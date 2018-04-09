@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-	
+	public Transform sightStart, sightEnd, sightEndUp, sightEndDown;
+	public bool playerSeen = false;
 	public Waypoint[] wayPoints;
 	public float speed = 3f;
 	public bool isCircular;
@@ -57,6 +58,7 @@ public class Mover : MonoBehaviour
 	 */
 	void FixedUpdate()
 	{
+		Raycasting();
 		if(currentWaypoint != null && !isWaiting) {
 			MoveTowardsWaypoint();
 		}
@@ -73,6 +75,14 @@ public class Mover : MonoBehaviour
 		isWaiting = !isWaiting;
 	}
 
+	void Raycasting(){
+		Debug.DrawLine(sightStart.position,sightEnd.position,Color.white);
+		Debug.DrawLine(sightStart.position,sightEndUp.position,Color.white);
+		Debug.DrawLine(sightStart.position,sightEndDown.position,Color.white);
+
+		playerSeen = Physics2D.Linecast(sightStart.position,sightEnd.position, 1 <<LayerMask.NameToLayer("Player"));
+		if (playerSeen) Debug.Log("Seen");
+	}
 
 	
 	/**
