@@ -9,6 +9,7 @@ TagManager:
   - AssaultRifle
   - RocketLauncher
   - Ladder
+  - ShootAnywhere
   layers:
   - Default
   - TransparentFX

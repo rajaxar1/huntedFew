@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
     int coins = 0;
     Vector3 startingPosition;
 
+    int numberOfJumps = 0;
     bool onLadder = false;
     bool hasRocketLauncher = false;
     bool hasMachineGun = false;
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour {
         anim = GetComponent<Animator>();
         anim.SetBool("melee", true);
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 10;
         startingPosition = transform.position;
     }
 
@@ -87,14 +89,13 @@ public class Player : MonoBehaviour {
                     rockets++; // increment rockets
                     Destroy(gun.gameObject);
                     break;
+                case "ShootAnywhere":
+                    Weapon.setShootAnywhere();
+                    Destroy(gun.gameObject);
+                    break;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            rb.AddForce(new Vector2(0f, jumpForce));
-            jump = true;
-        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             AnimTrigger("punch");
@@ -165,6 +166,15 @@ public class Player : MonoBehaviour {
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+
+        if (grounded) numberOfJumps = 0;
+
+        if (Input.GetKeyDown(KeyCode.Space) && (numberOfJumps < 2 || grounded))
+        {
+            rb.AddForce(new Vector2(0f, jumpForce));
+            numberOfJumps++;
+            jump = true;
+        }
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");

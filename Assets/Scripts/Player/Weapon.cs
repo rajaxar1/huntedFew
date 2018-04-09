@@ -11,6 +11,8 @@ public class Weapon : MonoBehaviour {
     public Transform BulletTrailPrefab;
     public Transform MuzzleFlashPrefab;
 
+    static bool shootAnywhere = false;
+
     private float TimeToSpawnEffect = 0;
     public float EffectSpawnRate = 10;
     private float timeToFire = 0.0f;
@@ -46,12 +48,34 @@ public class Weapon : MonoBehaviour {
         }
 	}
 
+    public static void setShootAnywhere()
+    {
+        shootAnywhere = true;
+    }
+
     private void Shoot()
     {
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
             Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         Vector2 firePointPostion = new Vector2(firePoint.position.x, firePoint.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(firePointPostion, mousePosition - firePointPostion, 100, whatToHit);
+        RaycastHit2D hit;
+        if (shootAnywhere)
+        {
+            hit = Physics2D.Raycast(firePointPostion, mousePosition - firePointPostion, 100, whatToHit);
+        }
+        else
+        {
+            if (firePoint.rotation.w != 1.0)
+            {
+                hit = Physics2D.Raycast(firePointPostion, new Vector2(firePoint.position.x + 5, 0), 100, whatToHit);
+            }
+            else
+            {
+                hit = Physics2D.Raycast(firePointPostion, new Vector2(-firePoint.position.x - 5, 0), 100, whatToHit);
+            }
+            
+        }
+        
         if (Time.time >= TimeToSpawnEffect)
         {
             Effect();
@@ -73,7 +97,20 @@ public class Weapon : MonoBehaviour {
 
     private void Effect()
     {
-        Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+        Vector3 mousePosition = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
+    Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+
+        if (shootAnywhere)
+        {
+            var pos = Camera.main.WorldToScreenPoint(transform.position);
+            var dir = Input.mousePosition - pos;
+            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Instantiate(BulletTrailPrefab, firePoint.position, Quaternion.AngleAxis(angle, Vector3.forward));
+        }
+        else
+        {
+            Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+        }
         Transform effectInstance = (Transform)Instantiate(MuzzleFlashPrefab, firePoint.position, firePoint.rotation);
 
         effectInstance.parent = firePoint;
