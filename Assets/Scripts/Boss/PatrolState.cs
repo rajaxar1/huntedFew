@@ -68,11 +68,6 @@ public class PatrolState : AiState {
             if (Mathf.Abs(rb.velocity.x) > maxSpeed)
                 rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
 
-            if (directionOfTravel.x > 0 && !facingRight)
-                Flip();
-            else if (directionOfTravel.x < 0 && facingRight)
-                Flip();
-
         }
         else
         {

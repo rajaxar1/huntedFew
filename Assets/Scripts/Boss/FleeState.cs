@@ -67,11 +67,6 @@ protected void MoveTowardsWaypoint()
             if (Mathf.Abs(rb.velocity.x) > maxSpeed)
                 rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
 
-            if (directionOfTravel.x > 0 && !facingRight)
-                Flip();
-            else if (directionOfTravel.x < 0 && facingRight)
-                Flip();
-
         }
         else
         {
@@ -102,30 +97,17 @@ protected void MoveTowardsWaypoint()
     override
     protected void NextWaypoint()
     {
+        int nextIndexIfGoingForward = (currentIndex + 1 >= wayPoints.Length) ? 0 : currentIndex + 1;
 
-        if (isCircular)
-        {
+        if ((Vector3.Distance(wayPoints[currentIndex].transform.position, player.transform.position) >
+            Vector3.Distance(wayPoints[nextIndexIfGoingForward].transform.position, player.transform.position))){
+            inReverse = true;
 
-            if (!inReverse)
-            {
-                currentIndex = (currentIndex + 1 >= wayPoints.Length) ? 0 : currentIndex + 1;
-            }
-            else
-            {
-                currentIndex = (currentIndex == 0) ? wayPoints.Length - 1 : currentIndex - 1;
-            }
-
+            currentIndex = (currentIndex == 0) ? wayPoints.Length - 1 : currentIndex - 1;
         }
         else
         {
-
-            // If at the start or the end then reverse
-            if ((!inReverse && currentIndex + 1 >= wayPoints.Length) || (inReverse && currentIndex == 0))
-            {
-                inReverse = !inReverse;
-            }
-            currentIndex = (!inReverse) ? currentIndex + 1 : currentIndex - 1;
-
+            currentIndex = nextIndexIfGoingForward;
         }
 
         currentWaypoint = wayPoints[currentIndex];

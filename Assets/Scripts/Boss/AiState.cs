@@ -6,7 +6,6 @@ public abstract class AiState
 {
     //player.cs
     [HideInInspector] public bool jump = true;
-    [HideInInspector] public bool facingRight = true;
 
     public Waypoint currentWaypoint;
     public Waypoint[] wayPoints;
@@ -51,14 +50,6 @@ public abstract class AiState
         }
 
         return waypoint;
-    }
-
-    protected void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 theScale = mover.transform.localScale;
-        theScale.x *= -1;
-        mover.transform.localScale = theScale;
     }
 
     protected void Pause()

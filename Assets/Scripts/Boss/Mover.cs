@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class Mover : MonoBehaviour
 	public bool playerSeen = false;
 
     public Waypoint[] waypoints;
+
+    [HideInInspector] public bool facingRight = true;
 
     public Transform groundCheck;
     float groundRadius = 0.2f;
@@ -22,27 +25,33 @@ public class Mover : MonoBehaviour
 
     private GameObject player;
 
+    private Rigidbody2D rb;
+
     void Awake()
     {
+        this.rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start () {
-        aiState = new PatrolState(this);
+        SwtichToPatrolState();
 	}
 
     public void SwtichToPatrolState()
     {
+        Debug.Log("PatrolState");
         aiState = new PatrolState(this);
     }
 
     public void SwitchToFleeState()
     {
+        Debug.Log("FleeState");
         aiState = new FleeState(this);
     }
 
     public void SwitchToAggroState()
     {
+        Debug.Log("AggroState");
         aiState = new AggroState(this);
     }
 
@@ -58,6 +67,7 @@ public class Mover : MonoBehaviour
 	void FixedUpdate()
 	{
         aiState.move();
+        SetFacingDirection();
 		Raycasting();
 	}
 
@@ -75,5 +85,20 @@ public class Mover : MonoBehaviour
 		playerSeen = Physics2D.Linecast(sightStart.position,sightEnd.position, 1 <<LayerMask.NameToLayer("Player"));
 		if (playerSeen) Debug.Log("Seen");
 	}
-	
+
+    internal void SetFacingDirection()
+    {
+        if (rb.velocity.x > 0 && !facingRight)
+            Flip();
+        else if (rb.velocity.x < 0 && facingRight)
+            Flip();
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
 }
