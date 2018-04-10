@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour {
 
     public BossStats bossStats = new BossStats();
-
+    public Mover mover;
     GameObject player;
 
     PlayerHealth playerHealth;
@@ -67,6 +67,7 @@ public class Boss : MonoBehaviour {
             playerHealth.TakeDamage(attackDamage);
         }
         //anim.ResetTrigger("Attack");
+        mover.SwitchToFleeState();
     }
 
     void AnimTrigger(string triggerName)

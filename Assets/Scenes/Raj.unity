@@ -5021,7 +5021,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -10711,22 +10711,7 @@ MonoBehaviour:
   sightEndUp: {fileID: 0}
   sightEndDown: {fileID: 0}
   playerSeen: 0
-  wayPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 3
-  isCircular: 1
-  inReverse: 0
-  currentWaypoint: {fileID: 0}
-  facingRight: 1
-  jump: 1
-  moveForce: 365
-  maxSpeed: 5
-  jumpForce: 700
-  distance1: 0
+  waypoints: []
   groundCheck: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
@@ -11038,7 +11023,7 @@ MonoBehaviour:
   sightEndUp: {fileID: 1040258883}
   sightEndDown: {fileID: 1175643057}
   playerSeen: 0
-  wayPoints:
+  waypoints:
   - {fileID: 1490225515}
   - {fileID: 1677768928}
   - {fileID: 59291551}
@@ -11064,16 +11049,14 @@ MonoBehaviour:
   - {fileID: 655238275}
   - {fileID: 774093454}
   - {fileID: 1913995909}
-  speed: 3
-  isCircular: 1
-  inReverse: 0
-  currentWaypoint: {fileID: 0}
-  facingRight: 1
-  jump: 1
-  moveForce: 365
-  maxSpeed: 5
-  jumpForce: 200
-  distance1: 0
+  - {fileID: 685218837}
+  - {fileID: 942260698}
+  - {fileID: 1034014557}
+  - {fileID: 1355359613}
+  - {fileID: 1539929324}
+  - {fileID: 1642896437}
+  - {fileID: 355407182}
+  - {fileID: 994445739}
   groundCheck: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
