@@ -38,6 +38,21 @@ public abstract class AiState
 
     protected abstract void NextWaypoint();
 
+    protected Waypoint ClosestWaypoint()
+    {
+        Waypoint waypoint = null ;
+        if (wayPoints.Length > 0) waypoint = wayPoints[0];
+
+        for(int i = 0; i < wayPoints.Length; ++i)
+        {
+            if (Vector3.Distance(mover.transform.position, wayPoints[i].transform.position) <
+                Vector3.Distance(mover.transform.position, waypoint.transform.position))
+                waypoint = wayPoints[i];
+        }
+
+        return waypoint;
+    }
+
     protected void Flip()
     {
         facingRight = !facingRight;

@@ -14,7 +14,7 @@ public class PatrolState : AiState {
         rb.gravityScale = 2;
         if (wayPoints.Length > 0)
         {
-            currentWaypoint = wayPoints[0];
+            currentWaypoint = ClosestWaypoint();
         }
     }
 
