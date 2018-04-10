@@ -45,6 +45,7 @@ public class Mover : MonoBehaviour
 	 */
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 2;
 		if(wayPoints.Length > 0) {
 			currentWaypoint = wayPoints[0];
 		}
@@ -99,18 +100,19 @@ public class Mover : MonoBehaviour
 
 		distance1 = Vector3.Distance(currentPosition, targetPosition);
 		// If the moving object isn't that close to the waypoint
-		if(Vector3.Distance(currentPosition, targetPosition) > 3f) {
+		if(Vector3.Distance(currentPosition, targetPosition) > 4f) {
 
 			// Get the direction and normalize
 			Vector3 directionOfTravel = targetPosition - currentPosition;
 			directionOfTravel.Normalize();
 
 			if(targetPosition.y - currentPosition.y > 2 && jump == false){
+                Debug.Log("jump");
 				 rb.AddForce(new Vector2(0f, jumpForce));
 				 jump = true;
 			}
 
-			if(targetPosition.y - currentPosition.y < 1 && jump == true){
+			if(targetPosition.y - currentPosition.y > 2 && jump == true){
 				 jump = false;
 			}
 
