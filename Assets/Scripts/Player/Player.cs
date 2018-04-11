@@ -37,6 +37,7 @@ public class Player : MonoBehaviour {
 
     public WeaponSwitching weaponSwitching;
 
+
     // Use this for initialization
     void Start() {
         anim = GetComponent<Animator>();

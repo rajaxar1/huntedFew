@@ -18,7 +18,7 @@ public abstract class AiState
     public bool isCircular;
     // Always true at the beginning because the moving object will always move towards the first waypoint
 
-    protected int currentIndex = 0;
+    public int currentIndex = 0;
     protected bool isWaiting = false;
     protected float speedStorage = 0;
     protected GameObject player;

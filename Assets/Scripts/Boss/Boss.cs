@@ -9,6 +9,7 @@ public class Boss : MonoBehaviour {
     GameObject player;
 
     PlayerHealth playerHealth;
+    WeaponSwitching playerWeapon;
     Animator anim;
     bool playerInRange;
     float timer;
@@ -16,11 +17,16 @@ public class Boss : MonoBehaviour {
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
 
+    public bool hasPistol = false;
+    public bool hasAr = false;
+    public bool hasRocket = false;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
+        playerWeapon = player.GetComponent<Player>().weaponSwitching;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -30,6 +36,18 @@ public class Boss : MonoBehaviour {
         {
             // ... the player is in range.
             playerInRange = true;
+            
+            if(!(hasPistol && hasAr && hasRocket)){ //check if boss knows player has all weapons
+                if(playerWeapon.selectedWeapon == 0){ //store that boss knows about the pistol
+                    hasPistol = true;
+                }
+                else if(playerWeapon.selectedWeapon == 1){ //store that boss knows about the ar
+                    hasAr = true;
+                }
+                else if(playerWeapon.selectedWeapon == 2){ //store that boss knows about the rocket
+                    hasRocket = true;
+                }
+            }
         }
     }
 

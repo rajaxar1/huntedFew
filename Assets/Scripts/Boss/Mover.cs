@@ -27,6 +27,9 @@ public class Mover : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public string currentState; //debug purposes
+    public int currentWaypoint;
+
     void Awake()
     {
         this.rb = GetComponent<Rigidbody2D>();
@@ -41,18 +44,21 @@ public class Mover : MonoBehaviour
     {
         Debug.Log("PatrolState");
         aiState = new PatrolState(this);
+        currentState = "PatrolState";
     }
 
     public void SwitchToFleeState()
     {
         Debug.Log("FleeState");
         aiState = new FleeState(this);
+        currentState = "FleeState";
     }
 
     public void SwitchToAggroState()
     {
         Debug.Log("AggroState");
         aiState = new AggroState(this);
+        currentState = "AggroState";
     }
 
     public GameObject GetPlayer()
@@ -69,6 +75,7 @@ public class Mover : MonoBehaviour
         aiState.move();
         SetFacingDirection();
 		Raycasting();
+        currentWaypoint=  aiState.currentIndex;
 	}
 
     public Waypoint[] getWaypoints()
