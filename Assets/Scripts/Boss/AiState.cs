@@ -5,12 +5,13 @@ using UnityEngine;
 public abstract class AiState
 {
     //player.cs
-    [HideInInspector] public bool jump = true;
+    public bool jump = true;
 
     public Waypoint currentWaypoint;
     public Waypoint[] wayPoints;
     public float speed = 3f;
     public bool inReverse = true;
+
     public float moveForce = 365f;
     public float maxSpeed = 5f;
     public float jumpForce = 700;
@@ -51,6 +52,8 @@ public abstract class AiState
 
         return waypoint;
     }
+
+    
 
     protected void Pause()
     {

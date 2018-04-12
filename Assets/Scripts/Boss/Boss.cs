@@ -49,6 +49,12 @@ public class Boss : MonoBehaviour {
                 }
             }
         }
+        
+        if(other.gameObject.tag == "Ladder"){
+            Debug.Log("Entered");
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+        }
+        
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -58,6 +64,10 @@ public class Boss : MonoBehaviour {
         {
             // ... the player is no longer in range.
             playerInRange = false;
+        }
+
+        if(other.gameObject.tag == "Ladder"){
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 2;
         }
     }
 

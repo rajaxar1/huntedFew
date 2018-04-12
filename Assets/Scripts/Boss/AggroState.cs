@@ -37,7 +37,7 @@ public class AggroState : AiState {
             if (targetPosition.y - currentPosition.y > 2 && jump == false)
             {
                 Debug.Log("jump");
-                rb.AddForce(new Vector2(0f, jumpForce));
+                rb.velocity = new Vector3(0,13,0);
                 jump = true;
             }
 

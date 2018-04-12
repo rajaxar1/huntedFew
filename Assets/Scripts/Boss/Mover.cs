@@ -30,6 +30,8 @@ public class Mover : MonoBehaviour
     public string currentState; //debug purposes
     public int currentWaypoint;
 
+    public bool jump;
+
     void Awake()
     {
         this.rb = GetComponent<Rigidbody2D>();
@@ -76,6 +78,7 @@ public class Mover : MonoBehaviour
         SetFacingDirection();
 		Raycasting();
         currentWaypoint=  aiState.currentIndex;
+        jump = aiState.jump;
 	}
 
     public Waypoint[] getWaypoints()

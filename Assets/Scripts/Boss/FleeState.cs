@@ -29,6 +29,7 @@ protected void MoveTowardsWaypoint()
 
         distance1 = Vector3.Distance(currentPosition, targetPosition);
         // If the moving object isn't that close to the waypoint
+
         if (Vector3.Distance(currentPosition, targetPosition) > 4f)
         {
 
@@ -39,7 +40,7 @@ protected void MoveTowardsWaypoint()
             if (targetPosition.y - currentPosition.y > 2 && jump == false)
             {
                 Debug.Log("jump");
-                rb.AddForce(new Vector2(0f, jumpForce));
+                rb.velocity = new Vector3(0,13,0);
                 jump = true;
             }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PatrolState : AiState {
 
+    private bool onLadder = false;
+
     public PatrolState(Mover mover)
     {
         this.mover = mover;
@@ -32,19 +34,19 @@ public class PatrolState : AiState {
         // If the moving object isn't that close to the waypoint
         if (Vector3.Distance(currentPosition, targetPosition) > 4f)
         {
-
+            Debug.Log(targetPosition.y - currentPosition.y);
             // Get the direction and normalize
             Vector3 directionOfTravel = targetPosition - currentPosition;
             directionOfTravel.Normalize();
 
-            if (targetPosition.y - currentPosition.y > 2 && jump == false)
+            if (targetPosition.y - currentPosition.y > 1 && jump == false)
             {
                 Debug.Log("jump");
-                rb.AddForce(new Vector2(0f, jumpForce));
+                rb.velocity = new Vector3(0,13,0);
                 jump = true;
             }
 
-            if (targetPosition.y - currentPosition.y > 2 && jump == true)
+            if (targetPosition.y - currentPosition.y < 1 && jump == true)
             {
                 jump = false;
             }
@@ -93,6 +95,7 @@ public class PatrolState : AiState {
 
             NextWaypoint();
         }
+
     }
 
     override
