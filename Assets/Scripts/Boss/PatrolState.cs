@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PatrolState : AiState {
-
+    private bool closeBy =false;
     private bool onLadder = false;
 
     public PatrolState(Mover mover)
     {
+        Debug.Log("Now in PatrolState");
         this.mover = mover;
         this.wayPoints = mover.getWaypoints();
         this.player = mover.GetPlayer();
@@ -34,7 +35,7 @@ public class PatrolState : AiState {
         // If the moving object isn't that close to the waypoint
         if (Vector3.Distance(currentPosition, targetPosition) > 4f)
         {
-            Debug.Log(targetPosition.y - currentPosition.y);
+            //Debug.Log(targetPosition.y - currentPosition.y);
             // Get the direction and normalize
             Vector3 directionOfTravel = targetPosition - currentPosition;
             directionOfTravel.Normalize();
@@ -132,10 +133,12 @@ public class PatrolState : AiState {
 
     public override void move()
     {
-
-        if ((Vector3.Distance(mover.transform.position, player.transform.position) < 10f))
+        closeBy = (Vector3.Distance(mover.transform.position, player.transform.position)) < 10f;
+        if (closeBy)
         {
-            mover.SwitchToAggroState();
+            Debug.Log("Switching to Aggro");
+            mover.switchSeen();            
+            mover.SwitchState(true);
         }
         if (currentWaypoint != null && !isWaiting)
         {

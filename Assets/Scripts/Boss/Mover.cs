@@ -6,9 +6,10 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
 	public Transform sightStart, sightEnd, sightEndUp, sightEndDown;
-	public bool playerSeen = false;
-
+	public RaycastHit2D playerSeen;
+	public int playerIsSeen = 0;
     public Waypoint[] waypoints;
+    public float rando;
 
     [HideInInspector] public bool facingRight = true;
 
@@ -18,7 +19,6 @@ public class Mover : MonoBehaviour
 
     bool grounded = false;
 
-	int coins = 0;
 	Vector3 startingPosition;
 
     private AiState aiState;
@@ -31,6 +31,12 @@ public class Mover : MonoBehaviour
     public int currentWaypoint;
 
     public bool jump;
+
+    public int sc;
+
+    public void getSC(){
+        sc = Boss.setShotCount();
+    }
 
     void Awake()
     {
@@ -63,6 +69,45 @@ public class Mover : MonoBehaviour
         currentState = "AggroState";
     }
 
+    public void SwitchState(bool closeBy){
+    	if (sc == 1){
+            SwitchToFleeState();
+        }
+        if (playerIsSeen == 0){
+    		SwtichToPatrolState();
+    	}
+    	else if (playerIsSeen == 1){
+    		if (closeBy){
+                SwitchToFleeState();
+            }
+            else{
+                SwtichToPatrolState();
+            }
+    	}
+        else if (playerIsSeen > 3){
+            SwitchToAggroState();
+        }
+    	else{
+    		if (closeBy){
+    			rando = UnityEngine.Random.Range(0.0f, 1.0f);
+    			Debug.Log(rando);
+    			if (rando <= .9f){
+    				SwitchToAggroState();
+    			}
+    			else{
+    				SwitchToFleeState();
+    			}
+    		}
+    		else{
+    			SwtichToPatrolState();
+    		}
+    	}
+    }
+
+    public void switchSeen(){
+    	playerIsSeen++;
+    }
+
     public GameObject GetPlayer()
     {
         return player;
@@ -91,10 +136,12 @@ public class Mover : MonoBehaviour
 		Debug.DrawLine(sightStart.position,sightEnd.position,Color.white);
 		Debug.DrawLine(sightStart.position,sightEndUp.position,Color.white);
 		Debug.DrawLine(sightStart.position,sightEndDown.position,Color.white);
-
-		playerSeen = Physics2D.Linecast(sightStart.position,sightEnd.position, 1 <<LayerMask.NameToLayer("Player"));
-		if (playerSeen) Debug.Log("Seen");
+		int layerMask = 1 << 11;
+		layerMask = ~layerMask;
+		playerSeen = Physics2D.Raycast(sightStart.position,sightEnd.position, Mathf.Infinity, layerMask, -Mathf.Infinity, Mathf.Infinity);
+		if (playerSeen.collider == null) Debug.Log("Seen");
 	}
+
 
     internal void SetFacingDirection()
     {

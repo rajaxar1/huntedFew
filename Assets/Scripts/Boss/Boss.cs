@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour {
     public BossStats bossStats = new BossStats();
     public Mover mover;
     GameObject player;
+    public static int shotCount = 0;
 
     PlayerHealth playerHealth;
     WeaponSwitching playerWeapon;
@@ -15,7 +16,7 @@ public class Boss : MonoBehaviour {
     float timer;
 
     public float timeBetweenAttacks = 0.5f;
-    public int attackDamage = 10;
+    public int attackDamage = 25;
 
     public bool hasPistol = false;
     public bool hasAr = false;
@@ -77,11 +78,21 @@ public class Boss : MonoBehaviour {
         timer += Time.deltaTime;
 
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-        if (timer >= timeBetweenAttacks && playerInRange)
+        if (timer >= timeBetweenAttacks)
         {
-            // ... attack.
-            Attack();
+            if (playerInRange){
+                Attack();
+            }
+            if (shotCount > 2){
+                Fire();
+            }
         }
+    }
+
+    void Fire(){
+        //COLTON
+        //CAN YOU SPAWN 2 PROJECTILE SHOTS HERE
+        //BASICALLY IF THE PLAYER RUNS AWAY THE ENEMY JUST FIRES A PROJECTILE OR TWO AT THE PLAYER
     }
 
 
@@ -94,8 +105,15 @@ public class Boss : MonoBehaviour {
         {
             playerHealth.TakeDamage(attackDamage);
         }
-        //anim.ResetTrigger("Attack");
-        mover.SwitchToFleeState();
+        ExecuteAfterDelay();
+
+        anim.ResetTrigger("Attack");
+        //Attack();
+        //mover.SwitchToFleeState();
+    }
+
+    IEnumerator ExecuteAfterDelay(){
+        yield return new WaitForSeconds(5);
     }
 
     void AnimTrigger(string triggerName)
@@ -106,14 +124,27 @@ public class Boss : MonoBehaviour {
         anim.SetTrigger(triggerName);
     }
 
+    public void HangryBoss(){
+        timeBetweenAttacks = .3f;
+        attackDamage = 50;
+    }
+
     public void DamageBoss(int damage)
     {
+        shotCount++;
         bossStats.health -= damage;
+        if (bossStats.health <= 50f){
+            HangryBoss();
+        }
         if (bossStats.health <= 0f)
         {
             anim.SetBool("Death", true);
             GameMaster.KillBoss(this);
         }
+    }
+
+    public static int setShotCount(){
+        return shotCount; 
     }
 
     public class BossStats

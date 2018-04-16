@@ -6,6 +6,7 @@ public class FleeState : AiState {
 
     public FleeState(Mover mover)
     {
+        Debug.Log("Now in FleeState");
         maxSpeed = 10f;
         this.mover = mover;
         this.player = mover.GetPlayer();
@@ -119,7 +120,7 @@ protected void MoveTowardsWaypoint()
 
         if ((Vector3.Distance(mover.transform.position, player.transform.position) > 20f))
         {
-            mover.SwtichToPatrolState();
+            mover.SwitchState(false);
         }
         if (currentWaypoint != null && !isWaiting)
         {
