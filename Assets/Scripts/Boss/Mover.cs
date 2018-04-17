@@ -50,21 +50,18 @@ public class Mover : MonoBehaviour
 
     public void SwtichToPatrolState()
     {
-        Debug.Log("PatrolState");
         aiState = new PatrolState(this);
         currentState = "PatrolState";
     }
 
     public void SwitchToFleeState()
     {
-        Debug.Log("FleeState");
         aiState = new FleeState(this);
         currentState = "FleeState";
     }
 
     public void SwitchToAggroState()
     {
-        Debug.Log("AggroState");
         aiState = new AggroState(this);
         currentState = "AggroState";
     }
@@ -90,7 +87,6 @@ public class Mover : MonoBehaviour
     	else{
     		if (closeBy){
     			rando = UnityEngine.Random.Range(0.0f, 1.0f);
-    			Debug.Log(rando);
     			if (rando <= .9f){
     				SwitchToAggroState();
     			}

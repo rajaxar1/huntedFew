@@ -21,12 +21,12 @@ public class CameraController : MonoBehaviour {
          if (cameras.Length>0)
          {
              cameras [0].gameObject.SetActive (true);
-             Debug.Log ("Camera with name: " + cameras [0].GetComponent<Camera>().name + ", is now enabled");
+             //Debug.Log ("Camera with name: " + cameras [0].GetComponent<Camera>().name + ", is now enabled");
          }
      }
      
      void CameraSwap (Collider2D other){
-     	Debug.Log ("Entering other room");
+     	//Debug.Log ("Entering other room");
      	for (int i=0; i<cameras.Length; i++) 
          {
              if (cameras[i].gameObject.name == other.gameObject.name){
@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour {
      }
 
      void OnTriggerEnter2D (Collider2D other){
-     	Debug.Log ("Entering other room");
+     	//Debug.Log ("Entering other room");
      	for (int i=0; i<cameras.Length; i++) 
          {
              if (cameras[i].gameObject.name == other.gameObject.name){
@@ -57,37 +57,37 @@ public class CameraController : MonoBehaviour {
          if (Input.GetKeyDown(KeyCode.C))
          {
              currentCameraIndex ++;
-             Debug.Log ("C button has been pressed. Switching to the next camera");
+             //Debug.Log ("C button has been pressed. Switching to the next camera");
              if (currentCameraIndex < cameras.Length)
              {
                  cameras[currentCameraIndex-1].gameObject.SetActive(false);
                  cameras[currentCameraIndex].gameObject.SetActive(true);
-                 Debug.Log ("Camera with name: " + cameras [currentCameraIndex].GetComponent<Camera>().name + ", is now enabled");
+                 //Debug.Log ("Camera with name: " + cameras [currentCameraIndex].GetComponent<Camera>().name + ", is now enabled");
              }
              else
              {
                  cameras[currentCameraIndex-1].gameObject.SetActive(false);
                  currentCameraIndex = 0;
                  cameras[currentCameraIndex].gameObject.SetActive(true);
-                 Debug.Log ("Camera with name: " + cameras [currentCameraIndex].GetComponent<Camera>().name + ", is now enabled");
+                 //Debug.Log ("Camera with name: " + cameras [currentCameraIndex].GetComponent<Camera>().name + ", is now enabled");
              }
          }
          if (Input.GetKeyDown(KeyCode.Z))
          {
              currentCameraIndex --;
-             Debug.Log ("Z button has been pressed. Switching to the previous camera");
+             //Debug.Log ("Z button has been pressed. Switching to the previous camera");
              if (currentCameraIndex > 0)
              {
                  cameras[currentCameraIndex-1].gameObject.SetActive(false);
                  cameras[currentCameraIndex].gameObject.SetActive(true);
-                 Debug.Log ("Camera with name: " + cameras [currentCameraIndex].GetComponent<Camera>().name + ", is now enabled");
+                 //Debug.Log ("Camera with name: " + cameras [currentCameraIndex].GetComponent<Camera>().name + ", is now enabled");
              }
              else
              {
                  cameras[currentCameraIndex-1].gameObject.SetActive(false);
                  currentCameraIndex = cameras.Length - 1;
                  cameras[currentCameraIndex].gameObject.SetActive(true);
-                 Debug.Log ("Camera with name: " + cameras [currentCameraIndex].GetComponent<Camera>().name + ", is now enabled");
+                 //Debug.Log ("Camera with name: " + cameras [currentCameraIndex].GetComponent<Camera>().name + ", is now enabled");
              }
          }
      }

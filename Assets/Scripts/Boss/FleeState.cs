@@ -6,7 +6,6 @@ public class FleeState : AiState {
 
     public FleeState(Mover mover)
     {
-        Debug.Log("Now in FleeState");
         maxSpeed = 10f;
         this.mover = mover;
         this.player = mover.GetPlayer();
@@ -40,7 +39,6 @@ protected void MoveTowardsWaypoint()
 
             if (targetPosition.y - currentPosition.y > 2 && jump == false)
             {
-                Debug.Log("jump");
                 rb.velocity = new Vector3(0,13,0);
                 jump = true;
             }

@@ -6,6 +6,7 @@ public class Boss : MonoBehaviour {
 
     public BossStats bossStats = new BossStats();
     public Mover mover;
+    public Transform BossWeaponPrefab;
     GameObject player;
     public static int shotCount = 0;
 
@@ -24,6 +25,8 @@ public class Boss : MonoBehaviour {
 
     void Awake()
     {
+        Transform weapon = (Transform)Instantiate(BossWeaponPrefab, transform.position + new Vector3(2, 0, 0), transform.rotation);
+        weapon.parent = transform;
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -39,20 +42,25 @@ public class Boss : MonoBehaviour {
             playerInRange = true;
             
             if(!(hasPistol && hasAr && hasRocket)){ //check if boss knows player has all weapons
-                if(playerWeapon.selectedWeapon == 0){ //store that boss knows about the pistol
-                    hasPistol = true;
-                }
-                else if(playerWeapon.selectedWeapon == 1){ //store that boss knows about the ar
-                    hasAr = true;
-                }
-                else if(playerWeapon.selectedWeapon == 2){ //store that boss knows about the rocket
-                    hasRocket = true;
+                if (playerWeapon != null)
+                {
+                    if (playerWeapon.selectedWeapon == 0)
+                    { //store that boss knows about the pistol
+                        hasPistol = true;
+                    }
+                    else if (playerWeapon.selectedWeapon == 1)
+                    { //store that boss knows about the ar
+                        hasAr = true;
+                    }
+                    else if (playerWeapon.selectedWeapon == 2)
+                    { //store that boss knows about the rocket
+                        hasRocket = true;
+                    }
                 }
             }
         }
         
         if(other.gameObject.tag == "Ladder"){
-            Debug.Log("Entered");
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
         
@@ -80,6 +88,7 @@ public class Boss : MonoBehaviour {
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if (timer >= timeBetweenAttacks)
         {
+            Debug.Log("shot count "+shotCount);
             if (playerInRange){
                 Attack();
             }
@@ -90,9 +99,17 @@ public class Boss : MonoBehaviour {
     }
 
     void Fire(){
-        //COLTON
-        //CAN YOU SPAWN 2 PROJECTILE SHOTS HERE
-        //BASICALLY IF THE PLAYER RUNS AWAY THE ENEMY JUST FIRES A PROJECTILE OR TWO AT THE PLAYER
+        foreach (Transform weapon in transform)
+        {
+            if (weapon.name == "BossWeaponPrefab(Clone)")
+            {
+                Debug.Log("activating boss weapon");
+                weapon.gameObject.SetActive(true);
+                shotCount--;
+                weapon.gameObject.SetActive(true);
+                shotCount--;
+            }
+        }
     }
 
 
@@ -107,7 +124,6 @@ public class Boss : MonoBehaviour {
         }
         ExecuteAfterDelay();
 
-        anim.ResetTrigger("Attack");
         //Attack();
         //mover.SwitchToFleeState();
     }

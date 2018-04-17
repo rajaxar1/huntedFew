@@ -4883,7 +4883,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 626801352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.73, y: 11.49, z: -0.01171875}
+  m_LocalPosition: {x: 1.82, y: -6.91, z: -0.01171875}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10877,6 +10877,7 @@ MonoBehaviour:
   currentState: 
   currentWaypoint: 0
   jump: 0
+  sc: 0
 --- !u!95 &1381771002
 Animator:
   serializedVersion: 3
@@ -11227,6 +11228,7 @@ MonoBehaviour:
   currentState: 
   currentWaypoint: 0
   jump: 0
+  sc: 0
 --- !u!61 &1395751743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11284,6 +11286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mover: {fileID: 1395751742}
+  BossWeaponPrefab: {fileID: 4083328819716964, guid: 42f208fa647763d4b8f485841996ad38,
+    type: 2}
   timeBetweenAttacks: 0.5
   attackDamage: 10
   hasPistol: 0
@@ -15159,7 +15163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -560.9, y: 183.8}
+  m_AnchoredPosition: {x: -422.32, y: 183.8}
   m_SizeDelta: {x: 66.69, y: 58.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952522274

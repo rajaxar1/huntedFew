@@ -9,7 +9,6 @@ public class PatrolState : AiState {
 
     public PatrolState(Mover mover)
     {
-        Debug.Log("Now in PatrolState");
         this.mover = mover;
         this.wayPoints = mover.getWaypoints();
         this.player = mover.GetPlayer();
@@ -42,7 +41,6 @@ public class PatrolState : AiState {
 
             if (targetPosition.y - currentPosition.y > 1 && jump == false)
             {
-                Debug.Log("jump");
                 rb.velocity = new Vector3(0,13,0);
                 jump = true;
             }
@@ -136,7 +134,6 @@ public class PatrolState : AiState {
         closeBy = (Vector3.Distance(mover.transform.position, player.transform.position)) < 10f;
         if (closeBy)
         {
-            Debug.Log("Switching to Aggro");
             mover.switchSeen();            
             mover.SwitchState(true);
         }
