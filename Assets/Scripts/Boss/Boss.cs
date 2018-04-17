@@ -25,8 +25,6 @@ public class Boss : MonoBehaviour {
 
     void Awake()
     {
-        Transform weapon = (Transform)Instantiate(BossWeaponPrefab, transform.position + new Vector3(2, 0, 0), transform.rotation);
-        weapon.parent = transform;
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -101,7 +99,7 @@ public class Boss : MonoBehaviour {
     void Fire(){
         foreach (Transform weapon in transform)
         {
-            if (weapon.name == "BossWeaponPrefab(Clone)")
+            if (weapon.name == "BossWeaponPrefab")
             {
                 Debug.Log("activating boss weapon");
                 weapon.gameObject.SetActive(true);

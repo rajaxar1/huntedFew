@@ -436,6 +436,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &104366367
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1395751740}
+    m_Modifications:
+    - target: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.171875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.007615058
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99997103
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 66c5d84f6c7b5ae4b813310a24897777, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &108543575
 GameObject:
   m_ObjectHideFlags: 0
@@ -10685,8 +10727,6 @@ GameObject:
   - component: {fileID: 1381770996}
   - component: {fileID: 1381770995}
   - component: {fileID: 1381770994}
-  - component: {fileID: 1381771001}
-  - component: {fileID: 1381771000}
   - component: {fileID: 1381771002}
   - component: {fileID: 1381771003}
   - component: {fileID: 1381771004}
@@ -10838,46 +10878,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1381771000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1381770993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32f4a7c5a6f125e4a8e4ecc22634e03b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitSeconds: 0
-  speedOut: 0
---- !u!114 &1381771001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1381770993}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3bae19bc0fe99b4f843f6db191edf10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sightStart: {fileID: 0}
-  sightEnd: {fileID: 0}
-  sightEndUp: {fileID: 0}
-  sightEndDown: {fileID: 0}
-  playerIsSeen: 0
-  waypoints: []
-  rando: 0
-  facingRight: 1
-  groundCheck: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  currentState: 
-  currentWaypoint: 0
-  jump: 0
-  sc: 0
 --- !u!95 &1381771002
 Animator:
   serializedVersion: 3
@@ -10935,7 +10935,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.21, y: 0.49}
+  m_Size: {x: 0.23, y: 0.5}
   m_EdgeRadius: 0
 --- !u!1 &1392680683
 GameObject:
@@ -11153,6 +11153,7 @@ Transform:
   - {fileID: 798396743}
   - {fileID: 1040258883}
   - {fileID: 1175643057}
+  - {fileID: 1400391195}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11180,10 +11181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3bae19bc0fe99b4f843f6db191edf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightStart: {fileID: 1758113733}
-  sightEnd: {fileID: 798396743}
-  sightEndUp: {fileID: 1040258883}
-  sightEndDown: {fileID: 1175643057}
   playerIsSeen: 0
   waypoints:
   - {fileID: 1490225515}
@@ -11286,7 +11283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mover: {fileID: 1395751742}
-  BossWeaponPrefab: {fileID: 4083328819716964, guid: 42f208fa647763d4b8f485841996ad38,
+  BossWeaponPrefab: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777,
     type: 2}
   timeBetweenAttacks: 0.5
   attackDamage: 10
@@ -11392,6 +11389,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!4 &1400391195 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4996975050056710, guid: 66c5d84f6c7b5ae4b813310a24897777,
+    type: 2}
+  m_PrefabInternal: {fileID: 104366367}
 --- !u!1 &1455630261
 GameObject:
   m_ObjectHideFlags: 0

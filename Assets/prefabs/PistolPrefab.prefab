@@ -85,7 +85,7 @@ MonoBehaviour:
   damage: 10
   whatToHit:
     serializedVersion: 2
-    m_Bits: 4294965243
+    m_Bits: 4294964731
   BulletTrailPrefab: {fileID: 4716017904302716, guid: b77863248c4542144ab148468f417495,
     type: 2}
   MuzzleFlashPrefab: {fileID: 4164299620474698, guid: 905f0d39101641c4a8d32e8dceb32511,

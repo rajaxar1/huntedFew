@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveTrail : MonoBehaviour {
 
     public int movementSpeed = 230;
-
+    public int Damage = 10;
 	// Update is called once per frame
 	void Update () {
         transform.Translate(Vector3.right * Time.deltaTime * movementSpeed);
@@ -14,6 +14,11 @@ public class MoveTrail : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //Destroy(this.gameObject);
+        Boss bossEnemy = collision.GetComponent<Boss>();
+        if (bossEnemy != null)
+        {
+            Debug.Log(bossEnemy.bossStats.health);
+            bossEnemy.DamageBoss(Damage);
+        }
     }
 }

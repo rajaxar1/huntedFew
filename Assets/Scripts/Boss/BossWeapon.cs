@@ -58,21 +58,6 @@ public class BossWeapon : MonoBehaviour
             Effect();
             TimeToSpawnEffect = Time.time + 1 / EffectSpawnRate;
         }
-        //Debug.DrawLine(firePointPostion, (playerPosition - firePointPostion) * 100, Color.cyan);
-        Debug.Log(hit.collider.name);
-        if (hit.collider != null)
-        {
-            Debug.DrawLine(firePointPostion, hit.point, Color.red);
-            Player player = hit.collider.GetComponent<Player>();
-            if (player != null)
-            {
-                PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-                if (playerHealth != null)
-                {
-                    playerHealth.TakeDamage(damage);
-                }
-            }
-        }
     }
 
     private void Effect()
@@ -85,12 +70,12 @@ public class BossWeapon : MonoBehaviour
         Instantiate(BulletTrailPrefab, firePoint.position, Quaternion.AngleAxis(angle, Vector3.forward));
         
 
-        Transform effectInstance = (Transform)Instantiate(MuzzleFlashPrefab, firePoint.position, firePoint.rotation);
+        //Transform effectInstance = (Transform)Instantiate(MuzzleFlashPrefab, firePoint.position, firePoint.rotation);
 
-        effectInstance.parent = firePoint;
-        float size = UnityEngine.Random.Range(3.0f, 5.0f);
-        effectInstance.localScale = new Vector3(size, size, size);
+        //effectInstance.parent = firePoint;
+        //float size = UnityEngine.Random.Range(3.0f, 5.0f);
+        //effectInstance.localScale = new Vector3(size, size, size);
 
-        Destroy(effectInstance.gameObject, 0.02f);
+        //Destroy(effectInstance.gameObject, 0.02f);
     }
 }

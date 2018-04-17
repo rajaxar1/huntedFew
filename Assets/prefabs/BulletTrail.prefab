@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 120597841119519460}
   - component: {fileID: 114828074927112940}
   - component: {fileID: 61718249259277210}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 230
+  Damage: 10
 --- !u!120 &120597841119519460
 LineRenderer:
   m_ObjectHideFlags: 1

@@ -82,17 +82,6 @@ public class Weapon : MonoBehaviour {
             TimeToSpawnEffect = Time.time + 1 / EffectSpawnRate;
         }
         Debug.DrawLine(firePointPostion, (mousePosition - firePointPostion) * 100, Color.cyan);
-
-        if(hit.collider != null)
-        {
-            Debug.DrawLine(firePointPostion, hit.point, Color.red);
-            Boss bossEnemy = hit.collider.GetComponent<Boss>();
-            if (bossEnemy != null)
-            {
-                Debug.Log(bossEnemy.bossStats.health);
-                bossEnemy.DamageBoss(damage);
-            }
-        }
     }
 
     private void Effect()
