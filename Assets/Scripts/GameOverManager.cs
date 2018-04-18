@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
+    public Boss boss;
     public PlayerHealth playerHealth;       // Reference to the player's health.
     public float restartDelay = 5f;         // Time to wait before restarting the level
 
@@ -36,5 +37,23 @@ public class GameOverManager : MonoBehaviour
                 SceneManager.LoadScene(2);
             }
         }
+
+        Debug.Log(boss.currentHealth() + "in gameover manager");
+        if(boss.currentHealth() <= 0.0f)
+        {
+            anim.SetTrigger("Win");
+
+            // .. increment a timer to count up to restarting.
+            restartTimer += Time.deltaTime;
+
+            // .. if it reaches the restart delay...
+            if (restartTimer >= restartDelay)
+            {
+                // .. then reload the currently loaded level.
+                SceneManager.LoadScene(0);
+            }
+
+        }
+
     }
 }

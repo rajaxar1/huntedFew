@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,6 +63,11 @@ public class Boss : MonoBehaviour {
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
         
+    }
+
+    public float currentHealth()
+    {
+        return bossStats.health;
     }
 
     void OnTriggerExit2D(Collider2D other)
