@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-	public Transform sightStart, sightEnd, sightEndUp, sightEndDown;
+	//public Transform sightStart, sightEnd, sightEndUp, sightEndDown;
 	public RaycastHit2D playerSeen;
 	public int playerIsSeen = 0;
     public Waypoint[] waypoints;
@@ -50,21 +50,18 @@ public class Mover : MonoBehaviour
 
     public void SwtichToPatrolState()
     {
-        Debug.Log("PatrolState");
         aiState = new PatrolState(this);
         currentState = "PatrolState";
     }
 
     public void SwitchToFleeState()
     {
-        Debug.Log("FleeState");
         aiState = new FleeState(this);
         currentState = "FleeState";
     }
 
     public void SwitchToAggroState()
     {
-        Debug.Log("AggroState");
         aiState = new AggroState(this);
         currentState = "AggroState";
     }
@@ -90,7 +87,6 @@ public class Mover : MonoBehaviour
     	else{
     		if (closeBy){
     			rando = UnityEngine.Random.Range(0.0f, 1.0f);
-    			Debug.Log(rando);
     			if (rando <= .9f){
     				SwitchToAggroState();
     			}
@@ -133,13 +129,13 @@ public class Mover : MonoBehaviour
 	
 
 	void Raycasting(){
-		Debug.DrawLine(sightStart.position,sightEnd.position,Color.white);
-		Debug.DrawLine(sightStart.position,sightEndUp.position,Color.white);
-		Debug.DrawLine(sightStart.position,sightEndDown.position,Color.white);
-		int layerMask = 1 << 11;
-		layerMask = ~layerMask;
-		playerSeen = Physics2D.Raycast(sightStart.position,sightEnd.position, Mathf.Infinity, layerMask, -Mathf.Infinity, Mathf.Infinity);
-		if (playerSeen.collider == null) Debug.Log("Seen");
+		//Debug.DrawLine(sightStart.position,sightEnd.position,Color.white);
+		//Debug.DrawLine(sightStart.position,sightEndUp.position,Color.white);
+		///Debug.DrawLine(sightStart.position,sightEndDown.position,Color.white);
+		//int layerMask = 1 << 11;
+		//layerMask = ~layerMask;
+		//playerSeen = Physics2D.Raycast(sightStart.position,sightEnd.position, Mathf.Infinity, layerMask, -Mathf.Infinity, Mathf.Infinity);
+		//if (playerSeen.collider == null) Debug.Log("Seen");
 	}
 
 

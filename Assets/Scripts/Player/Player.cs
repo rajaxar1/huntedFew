@@ -64,7 +64,7 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        if (inTrigger) {
+        if (inTrigger && gun != null) {
             switch (gun.tag)
             {
                 case "AssaultRifle":

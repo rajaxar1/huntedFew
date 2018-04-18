@@ -65,13 +65,13 @@ public class Weapon : MonoBehaviour {
         }
         else
         {
-            if (firePoint.rotation.w != 1.0)
+            if (firePoint.rotation.w == 1.0)
             {
-                hit = Physics2D.Raycast(firePointPostion, new Vector2(firePoint.position.x + 5, 0), 100, whatToHit);
+                hit = Physics2D.Raycast(firePointPostion, new Vector2(firePoint.position.x + 5, 0), 100.0f, whatToHit);
             }
             else
             {
-                hit = Physics2D.Raycast(firePointPostion, new Vector2(-firePoint.position.x - 5, 0), 100, whatToHit);
+                hit = Physics2D.Raycast(firePointPostion, new Vector2(-firePoint.position.x - 5, 0), 100.0f, whatToHit);
             }
             
         }
@@ -82,23 +82,12 @@ public class Weapon : MonoBehaviour {
             TimeToSpawnEffect = Time.time + 1 / EffectSpawnRate;
         }
         Debug.DrawLine(firePointPostion, (mousePosition - firePointPostion) * 100, Color.cyan);
-
-        if(hit.collider != null)
-        {
-            Debug.DrawLine(firePointPostion, hit.point, Color.red);
-            Boss bossEnemy = hit.collider.GetComponent<Boss>();
-            if (bossEnemy != null)
-            {
-                Debug.Log(bossEnemy.bossStats.health);
-                bossEnemy.DamageBoss(damage);
-            }
-        }
     }
 
     private void Effect()
     {
         Vector3 mousePosition = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
-    Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+        Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
 
         if (shootAnywhere)
         {
@@ -114,7 +103,7 @@ public class Weapon : MonoBehaviour {
         Transform effectInstance = (Transform)Instantiate(MuzzleFlashPrefab, firePoint.position, firePoint.rotation);
 
         effectInstance.parent = firePoint;
-        float size = UnityEngine.Random.Range(0.6f, 0.9f);
+        float size = UnityEngine.Random.Range(3.0f, 5.0f);
         effectInstance.localScale = new Vector3(size, size, size);
 
         Destroy(effectInstance.gameObject, 0.02f);

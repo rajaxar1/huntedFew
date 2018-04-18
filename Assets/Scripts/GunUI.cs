@@ -10,7 +10,7 @@ public class GunUI : MonoBehaviour {
         {
             if (weapon.name == weaponName)
             {
-                Debug.Log(weapon.name);
+                //Debug.Log(weapon.name);
                 weapon.gameObject.SetActive(true);
             }
             else weapon.gameObject.SetActive(false);

@@ -6,7 +6,6 @@ public class AggroState : AiState {
 
     public AggroState(Mover mover)
     {
-        Debug.Log("Now in AggroState");
         this.mover = mover;
         this.player = mover.GetPlayer();
         this.wayPoints = mover.getWaypoints();
@@ -37,7 +36,6 @@ public class AggroState : AiState {
 
             if (targetPosition.y - currentPosition.y > 2 && jump == false)
             {
-              //  Debug.Log("jump");
                 rb.velocity = new Vector3(0,13,0);
                 jump = true;
             }
