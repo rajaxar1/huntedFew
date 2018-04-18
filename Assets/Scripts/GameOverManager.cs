@@ -38,7 +38,6 @@ public class GameOverManager : MonoBehaviour
             }
         }
 
-        Debug.Log(boss.currentHealth() + "in gameover manager");
         if(boss.currentHealth() <= 0.0f)
         {
             anim.SetTrigger("Win");
