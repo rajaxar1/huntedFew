@@ -13,6 +13,8 @@ public class PatrolState : AiState {
         this.wayPoints = mover.getWaypoints();
         this.player = mover.GetPlayer();
         this.rb = mover.GetComponent<Rigidbody2D>();
+        isCircular = true;
+        inReverse = false;
         rb.gravityScale = 2;
         if (wayPoints.Length > 0)
         {
