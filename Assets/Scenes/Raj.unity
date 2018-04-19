@@ -8292,7 +8292,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 34.07728, y: 21.023281}
+  m_Size: {x: 34.07728, y: 25.02328}
   m_EdgeRadius: 0
 --- !u!50 &946471469
 Rigidbody2D:
@@ -10637,6 +10637,7 @@ GameObject:
   - component: {fileID: 1166798515}
   - component: {fileID: 1166798514}
   - component: {fileID: 1166798516}
+  - component: {fileID: 1166798517}
   m_Layer: 0
   m_Name: Wall2
   m_TagString: Untagged
@@ -10742,6 +10743,17 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1166798517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1166798512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b7b9b538f17ec49a8b8c1ec8fc77e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1175643056
 GameObject:
   m_ObjectHideFlags: 0
