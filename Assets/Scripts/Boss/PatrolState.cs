@@ -7,6 +7,9 @@ public class PatrolState : AiState {
     private bool closeBy =false;
     private bool onLadder = false;
 
+    float timer = 0.0f;
+    float preventLockTime = 5.0f;
+
     public PatrolState(Mover mover)
     {
         this.mover = mover;
@@ -32,10 +35,13 @@ public class PatrolState : AiState {
         // Get the target waypoints position
         Vector3 targetPosition = currentWaypoint.transform.position;
 
+        if (timer >= preventLockTime) mover.transform.position = targetPosition;
+
         distance1 = Vector3.Distance(currentPosition, targetPosition);
         // If the moving object isn't that close to the waypoint
         if (Vector3.Distance(currentPosition, targetPosition) > 4f)
         {
+            timer += Time.deltaTime;
             //Debug.Log(targetPosition.y - currentPosition.y);
             // Get the direction and normalize
             Vector3 directionOfTravel = targetPosition - currentPosition;
@@ -102,6 +108,7 @@ public class PatrolState : AiState {
     override
     protected void NextWaypoint()
     {
+        timer = 0;
 
         if (isCircular)
         {
