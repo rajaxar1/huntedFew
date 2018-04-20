@@ -15,7 +15,7 @@ public class Boss : MonoBehaviour {
     WeaponSwitching playerWeapon;
     Animator anim;
     bool playerInRange;
-    float timer;
+    float timer = 0.0f;
 
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 25;
