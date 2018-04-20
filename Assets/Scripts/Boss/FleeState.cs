@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FleeState : AiState {
 
+    float timer = 0.0f;
+    float preventLockTime = 5.0f;
+
     public FleeState(Mover mover)
     {
         maxSpeed = 10f;
@@ -19,7 +22,7 @@ public class FleeState : AiState {
     }
 
     override
-protected void MoveTowardsWaypoint()
+    protected void MoveTowardsWaypoint()
     {
         // Get the moving objects current position
         Vector3 currentPosition = mover.transform.position;
@@ -27,11 +30,15 @@ protected void MoveTowardsWaypoint()
         // Get the target waypoints position
         Vector3 targetPosition = currentWaypoint.transform.position;
 
+        if (timer >= preventLockTime) mover.transform.position = targetPosition;
+
         distance1 = Vector3.Distance(currentPosition, targetPosition);
         // If the moving object isn't that close to the waypoint
 
         if (Vector3.Distance(currentPosition, targetPosition) > 4f)
         {
+
+            timer += Time.deltaTime;
 
             // Get the direction and normalize
             Vector3 directionOfTravel = targetPosition - currentPosition;
@@ -97,6 +104,8 @@ protected void MoveTowardsWaypoint()
     override
     protected void NextWaypoint()
     {
+        timer = 0;
+
         int nextIndexIfGoingForward = (currentIndex + 1 >= wayPoints.Length) ? 0 : currentIndex + 1;
 
         if ((Vector3.Distance(wayPoints[currentIndex].transform.position, player.transform.position) >
